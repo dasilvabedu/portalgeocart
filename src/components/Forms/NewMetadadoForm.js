@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
-import { getMetadados } from '../selectors/selectors';
+import { getMetadados } from '../../selectors/selectors';
 
 const FormContainer = styled.div`
     border-radius: 8px;

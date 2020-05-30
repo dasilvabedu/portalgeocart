@@ -1,3 +1,4 @@
+/* eslint-disable spaced-comment */
 const path = require('path');
 const webpack = require('webpack');
 
@@ -16,9 +17,16 @@ module.exports = {
                 test: /\.css$/,
                 use: ['style-loader', 'css-loader'],
             },
+            {
+                test: /\.(png|svg|jpg|jpeg|gif|tiff)$/,
+                use: ['file-loader'],
+            },
         ],
     },
-    resolve: { extensions: ['*', '.js', '.jsx'] },
+    resolve: {
+        extensions: ['*', '.js', '.jsx'],
+        //alias: { 'react-dom': '@hot-loader/react-dom' },
+    },
     output: {
         path: path.resolve(__dirname, 'dist/'),
         publicPath: '/dist/',
@@ -29,6 +37,7 @@ module.exports = {
         port: 3000,
         publicPath: 'http://localhost:3000/dist/',
         hotOnly: true,
+        historyApiFallback: true,
     },
     plugins: [new webpack.HotModuleReplacementPlugin()],
 };

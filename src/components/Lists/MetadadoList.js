@@ -1,12 +1,17 @@
+/* eslint-disable import/no-extraneous-dependencies */
 /* eslint-disable no-console */
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
-import { loadMetadados } from '../api/MetadadoApi';
-import NewMetadadoForm from './NewMetadadoForm';
+import { hot } from 'react-hot-loader';
+import { loadMetadados } from '../../api/MetadadoApi';
+import NewMetadadoForm from '../Forms/NewMetadadoForm';
 import MetadadoListItem from './MetadadoListItem';
 
-import { getMetadadosLoading, getAllMetadados } from '../selectors/selectors';
+import {
+    getMetadadosLoading,
+    getAllMetadados,
+} from '../../selectors/selectors';
 
 const ListWrapper = styled.div`
     max-width: 700px;
@@ -15,7 +20,7 @@ const ListWrapper = styled.div`
 
 const MetadadoList = ({
     metadados,
-    onCompletedPressed,
+    onUpdatedPressed,
     isLoading,
     startLoadingMetadados,
 }) => {
@@ -32,7 +37,7 @@ const MetadadoList = ({
                 <MetadadoListItem
                     key={metadado.id}
                     metadado={metadado}
-                    onCompletedPressed={onCompletedPressed}
+                    onUpdatedPressed={onUpdatedPressed}
                 />
             ))}
         </ListWrapper>
@@ -46,8 +51,12 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-    onCompletedPressed: (id) => dispatch(console.log(id)),
+    onUpdatedPressed: (id) => dispatch(console.log(id)),
     startLoadingMetadados: () => dispatch(loadMetadados()),
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(MetadadoList);
+const MetadadoListToExport = connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(MetadadoList);
+export default hot(module)(MetadadoListToExport);
