@@ -6,8 +6,8 @@ import styled from 'styled-components';
 import Header from '../Header';
 import Footer from '../Footer';
 
-const HEADER_HEIGHT = 50;
-const FOOTER_HEIGHT = 30;
+const HEADER_HEIGHT = 55;
+const FOOTER_HEIGHT = 35;
 
 const PageWrapper = styled.div`
     display: flex;

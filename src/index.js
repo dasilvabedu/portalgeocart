@@ -9,6 +9,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { configureStore } from './store';
 import BasePage from './layout/BasePage';
 import MetadadoList from './components/Lists/MetadadoList';
+import Grid from './components/Lists/Grid';
 import Map from './components/Map/Map';
 import NotFound from './pages/NotFound/NotFound';
 
@@ -23,6 +24,7 @@ ReactDOM.render(
                     <Switch>
                         <Route exact path="/" component={MetadadoList} />
                         <Route path="/map" component={Map} />
+                        <Route path="/grid" component={Grid} />
                         <Route component={NotFound} />
                     </Switch>
                 </BasePage>
