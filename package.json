@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "npx webpack-dev-server --mode development",
     "build": "npx webpack --mode development",
+    "prod": "npx webpack-dev-server --mode production",
+    "build_prod": "npx webpack --mode production",
     "test": "mocha \"src/**/*.test.js\" --require @babel/register --recursive"
   },
   "keywords": [],
@@ -51,6 +53,7 @@
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-draggable": "^4.4.2",
     "react-redux": "^7.2.0",
     "react-router-dom": "^5.2.0",
     "redux": "^4.0.5",

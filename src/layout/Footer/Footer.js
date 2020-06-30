@@ -1,27 +1,20 @@
 /* eslint-disable react/jsx-no-target-blank */
 import React from 'react';
-
 import styled from 'styled-components';
-import logoEcostage from './logo-ecostage.svg';
 
 const Wrapper = styled.footer`
     display: flex;
     align-items: center;
-    justify-content: space-between;
     height: 30px;
     padding: 0 16px;
     background-color: #636466;
+    justify-content: center;
 `;
 
 const CopyText = styled.small`
     font-size: 12px;
     color: white;
-`;
-
-const EcostageImage = styled.img`
-    display: block;
-    max-width: 86px;
-    height: auto;
+    text-align: center !important;
 `;
 
 export default function Footer() {
@@ -31,9 +24,6 @@ export default function Footer() {
                 © Copyright - China Three Gorges Brasil Energia Ltda. - Todos os
                 direitos reservados
             </CopyText>
-            <a href="http://www.ecostage.com.br" target="_blank">
-                <EcostageImage src={logoEcostage} alt="logo EcoStage" />
-            </a>
         </Wrapper>
     );
 }

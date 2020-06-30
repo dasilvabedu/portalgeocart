@@ -1,3 +1,4 @@
+/* eslint-disable spaced-comment */
 /* eslint-disable react/jsx-boolean-value */
 /* eslint-disable import/extensions */
 import React from 'react';
@@ -8,10 +9,9 @@ import { Provider } from 'react-redux';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import { configureStore } from './store';
 import BasePage from './layout/BasePage';
-import MetadadoList from './components/Lists/MetadadoList';
-import Grid from './components/Lists/Grid';
-import Map from './components/Map/Map';
+import Metadados from './components/Lists/Metadados';
 import NotFound from './pages/NotFound/NotFound';
+import './index.css';
 
 const store = configureStore();
 const persistor = persistStore(store);
@@ -22,9 +22,7 @@ ReactDOM.render(
             <BrowserRouter basename="/">
                 <BasePage>
                     <Switch>
-                        <Route exact path="/" component={MetadadoList} />
-                        <Route path="/map" component={Map} />
-                        <Route path="/grid" component={Grid} />
+                        <Route exact path="/" component={Metadados} />
                         <Route component={NotFound} />
                     </Switch>
                 </BasePage>

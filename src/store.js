@@ -4,10 +4,11 @@ import storage from 'redux-persist/lib/storage';
 import autoMergeLegel2 from 'redux-persist/lib/stateReconciler/autoMergeLevel2';
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import { metadados } from './reducers/reducers';
+import { metadados, metadadoSelected } from './reducers/reducers';
 
 const reducers = {
     metadados,
+    metadadoSelected,
 };
 
 const persistConfig = {

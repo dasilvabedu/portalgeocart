@@ -4,7 +4,7 @@ import React, { useEffect } from 'react';
 import { connect } from 'react-redux';
 import styled from 'styled-components';
 import { hot } from 'react-hot-loader';
-import { loadMetadados } from '../../api/MetadadoApi';
+import { loadMetadados } from '../../api/MetadadosApi';
 import NewMetadadoForm from '../Forms/NewMetadadoForm';
 import MetadadoListItem from './MetadadoListItem';
 
@@ -29,7 +29,7 @@ const MetadadoList = ({
     }, []);
 
     const loadingMessage = <div>Loading metadados...</div>;
-    const contant = (
+    const content = (
         <ListWrapper>
             <NewMetadadoForm />
             <h3>Metadados</h3>
@@ -42,7 +42,7 @@ const MetadadoList = ({
             ))}
         </ListWrapper>
     );
-    return isLoading ? loadingMessage : contant;
+    return isLoading ? loadingMessage : content;
 };
 
 const mapStateToProps = (state) => ({
